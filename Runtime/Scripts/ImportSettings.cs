@@ -71,6 +71,14 @@ namespace GLTFast
         }
 
         /// <summary>
+        /// Load textures as read/write enabled. Could reduce import performance.
+        /// </summary>
+        public bool ReadWriteEnabled
+        {
+            get => readWriteEnabled;
+            set => readWriteEnabled = value;
+        }
+        /// <summary>
         /// This property defines the anisotropic filtering level for imported textures
         /// </summary>
         public int AnisotropicFilterLevel
@@ -90,6 +98,10 @@ namespace GLTFast
         [SerializeField]
         [Tooltip("Controls if mipmaps are created for imported textures.")]
         bool generateMipMaps;
+
+        [SerializeField]
+        [Tooltip("Load textures as read/write enabled. Could reduce import performance.")]
+        bool readWriteEnabled = true;
 
         [SerializeField]
         [Tooltip("Minification filter mode fallback if no mode was provided.")]
